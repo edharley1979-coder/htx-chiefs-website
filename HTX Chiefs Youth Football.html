@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTX Chiefs Youth Football & Cheer | Houston, TX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chiefs: {
+                            orange: '#FF5500',
+                            darkOrange: '#E04800',
+                            black: '#121212',
+                            dark: '#1A1A1A',
+                            card: '#222222',
+                            gold: '#FFB800',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.95)), url('https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+        }
+        .orange-glow {
+            box-shadow: 0 0 20px rgba(255, 85, 0, 0.35);
+        }
+        .orange-gradient {
+            background: linear-gradient(135deg, #FF5500 0%, #D03D00 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px -5px rgba(255, 85, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-chiefs-black text-white antialiased selection:bg-chiefs-orange selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-chiefs-orange text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center tracking-wide">
+        <i class="fa-solid fa-bullhorn mr-2"></i> UPCOMING TRYOUTS: Saturday, June 12, 2027 at Inwood Field | Phone: 
+        <a href="tel:7134101665" class="underline hover:text-black transition-colors font-bold">713-410-1665</a>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="sticky top-0 z-40 bg-chiefs-dark/95 backdrop-blur border-b border-zinc-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="#" class="flex items-center space-x-3 group">
+                        <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center font-display font-black text-2xl text-white shadow-md group-hover:scale-105 transition-transform">
+                            C
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-display font-black text-xl tracking-wider text-white">HTX <span class="text-chiefs-orange">CHIEFS</span></span>
+                            <span class="text-xs tracking-widest text-zinc-400 font-semibold uppercase">Youth Football & Cheer</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide">
+                    <a href="#about" class="text-zinc-300 hover:text-chiefs-orange transition-colors">About Us</a>
+                    <a href="#divisions" class="text-zinc-300 hover:text-chiefs-orange transition-colors">Divisions</a>
+                    <a href="#tryouts" class="text-zinc-300 hover:text-chiefs-orange transition-colors">Tryouts</a>
+                    <a href="#schedule" class="text-zinc-300 hover:text-chiefs-orange transition-colors">Schedule</a>
+                    <a href="#contact" class="text-zinc-300 hover:text-chiefs-orange transition-colors">Contact</a>
+                    <button onclick="openModal('register')" class="orange-gradient text-white px-5 py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs shadow-md hover:brightness-110 transition-all hover:scale-105">
+                        Register Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-zinc-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-chiefs-dark border-b border-zinc-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-zinc-300 hover:text-chiefs-orange font-semibold">About Us</a>
+            <a href="#divisions" class="block py-2 text-zinc-300 hover:text-chiefs-orange font-semibold">Divisions</a>
+            <a href="#tryouts" class="block py-2 text-chiefs-orange font-bold">Tryouts (June 12, 2027)</a>
+            <a href="#schedule" class="block py-2 text-zinc-300 hover:text-chiefs-orange font-semibold">Schedule</a>
+            <a href="#contact" class="block py-2 text-zinc-300 hover:text-chiefs-orange font-semibold">Contact Us</a>
+            <a href="tel:7134101665" class="block py-2 text-chiefs-orange font-bold">
+                <i class="fa-solid fa-phone mr-2"></i>Call 713-410-1665
+            </a>
+            <button onclick="openModal('register')" class="w-full mt-2 orange-gradient text-white py-3 rounded-xl font-bold uppercase tracking-wider text-sm shadow-md">
+                Register Now
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative hero-bg py-24 md:py-32 overflow-hidden border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-chiefs-orange/20 border border-chiefs-orange/50 text-chiefs-orange font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-widest mb-6">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Building Champions On & Off The Field</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white uppercase leading-none mb-6">
+                    HTX CHIEFS <br><span class="text-chiefs-orange">FOOTBALL & CHEER</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-zinc-300 mb-8 leading-relaxed">
+                    Houston's premier youth athletics organization dedicated to discipline, teamwork, character building, and athletic excellence. Joining players ages 5–13.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="openModal('register')" class="orange-gradient text-white font-bold text-center px-8 py-4 rounded-xl shadow-lg hover:brightness-110 transition-all uppercase tracking-wider text-sm flex items-center justify-center space-x-2">
+                        <span>Register Player Today</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <a href="tel:7134101665" class="bg-zinc-800/90 border border-zinc-700 hover:border-chiefs-orange text-white font-bold text-center px-8 py-4 rounded-xl hover:bg-zinc-700 transition-all uppercase tracking-wider text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-phone text-chiefs-orange"></i>
+                        <span>Call 713-410-1665</span>
+                    </a>
+                </div>
+
+                <!-- Highlight Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-zinc-800/80">
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-black text-chiefs-orange">JUNE 12</p>
+                        <p class="text-xs sm:text-sm text-zinc-400 font-semibold uppercase">2027 Tryout Date</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-black text-white">INWOOD</p>
+                        <p class="text-xs sm:text-sm text-zinc-400 font-semibold uppercase">Practice Field</p>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <p class="text-2xl sm:text-3xl font-black text-chiefs-orange">5U - 13U</p>
+                        <p class="text-xs sm:text-sm text-zinc-400 font-semibold uppercase">Age Divisions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-20 bg-chiefs-black border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-chiefs-orange uppercase tracking-widest mb-2">Our Mission</h2>
+                <p class="text-3xl sm:text-4xl font-black text-white uppercase">WHY JOIN THE HTX CHIEFS FAMILY?</p>
+                <div class="w-20 h-1 bg-chiefs-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-chiefs-dark p-8 rounded-2xl border border-zinc-800 card-hover">
+                    <div class="w-14 h-14 orange-gradient rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Certified Coaching</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Our coaches are USA Football certified, prioritizing safety, fundamental skills development, sportsmanship, and player growth.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-chiefs-dark p-8 rounded-2xl border border-zinc-800 card-hover">
+                    <div class="w-14 h-14 orange-gradient rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Family & Community</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        We foster an inclusive community where young athletes build lifelong friendships, self-discipline, and strong leadership habits.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-chiefs-dark p-8 rounded-2xl border border-zinc-800 card-hover">
+                    <div class="w-14 h-14 orange-gradient rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Inwood Field Home</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Conveniently located practice facilities at Inwood Field, offering structured practice schedules and competitive play environment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tryouts" class="py-20 bg-gradient-to-b from-chiefs-dark to-chiefs-black relative overflow-hidden border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-zinc-900 via-chiefs-dark to-zinc-900 border-2 border-chiefs-orange/40 rounded-3xl p-8 sm:p-12 orange-glow relative">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8">
+                        <span class="bg-chiefs-orange text-white text-xs font-black uppercase px-3 py-1 rounded-md tracking-wider">Upcoming Event</span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-white uppercase mt-4 mb-4">
+                            2027 SEASON <span class="text-chiefs-orange">OFFICIAL TRYOUTS</span>
+                        </h2>
+                        <p class="text-zinc-300 text-base sm:text-lg mb-6">
+                            Join us for our upcoming open tryouts! All players and cheerleaders are welcome regardless of experience level.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-semibold mb-6">
+                            <div class="flex items-center space-x-3 bg-zinc-800/80 p-3.5 rounded-xl border border-zinc-700">
+                                <i class="fa-regular fa-calendar-check text-chiefs-orange text-xl"></i>
+                                <div>
+                                    <p class="text-xs text-zinc-400 font-normal">Date</p>
+                                    <p class="text-white font-bold">Saturday, June 12, 2027</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-zinc-800/80 p-3.5 rounded-xl border border-zinc-700">
+                                <i class="fa-solid fa-location-dot text-chiefs-orange text-xl"></i>
+                                <div>
+                                    <p class="text-xs text-zinc-400 font-normal">Location</p>
+                                    <p class="text-white font-bold">Inwood Field, Houston, TX</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-zinc-800/80 p-3.5 rounded-xl border border-zinc-700">
+                                <i class="fa-solid fa-clock text-chiefs-orange text-xl"></i>
+                                <div>
+                                    <p class="text-xs text-zinc-400 font-normal">Check-In Time</p>
+                                    <p class="text-white font-bold">9:00 AM CST</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-zinc-800/80 p-3.5 rounded-xl border border-zinc-700">
+                                <i class="fa-solid fa-phone text-chiefs-orange text-xl"></i>
+                                <div>
+                                    <p class="text-xs text-zinc-400 font-normal">Questions? Call Us</p>
+                                    <a href="tel:7134101665" class="text-chiefs-orange hover:underline font-bold">713-410-1665</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col justify-center items-center text-center bg-zinc-800/60 p-6 rounded-2xl border border-zinc-700">
+                        <i class="fa-solid fa-id-card text-4xl text-chiefs-orange mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Pre-Register Online</h3>
+                        <p class="text-xs text-zinc-400 mb-6">Save time at check-in by completing player pre-registration today.</p>
+                        <button onclick="openModal('tryouts')" class="w-full orange-gradient text-white py-3.5 rounded-xl font-bold uppercase tracking-wider text-sm shadow-md hover:brightness-110 transition-all">
+                            Sign Up For Tryouts
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="divisions" class="py-20 bg-chiefs-black border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-chiefs-orange uppercase tracking-widest mb-2">Age Groups & Squads</h2>
+                <p class="text-3xl sm:text-4xl font-black text-white uppercase">HTX CHIEFS DIVISIONS</p>
+                <div class="w-20 h-1 bg-chiefs-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Division 1 -->
+                <div class="bg-chiefs-dark p-6 rounded-2xl border border-zinc-800 text-center card-hover">
+                    <span class="text-xs font-bold text-chiefs-orange uppercase bg-chiefs-orange/10 px-3 py-1 rounded-full">Flag Football</span>
+                    <h3 class="text-2xl font-black text-white mt-4 mb-2">6U Division</h3>
+                    <p class="text-xs text-zinc-400 mb-4">Ages 5 - 6</p>
+                    <p class="text-sm text-zinc-300 mb-6">Focus on fundamentals, agility, fun, and introducing basic football concepts.</p>
+                    <button onclick="openModal('register', '6U Flag')" class="w-full py-2.5 bg-zinc-800 hover:bg-chiefs-orange text-white rounded-xl text-xs font-bold uppercase transition-colors">Register 6U</button>
+                </div>
+
+                <!-- Division 2 -->
+                <div class="bg-chiefs-dark p-6 rounded-2xl border border-zinc-800 text-center card-hover">
+                    <span class="text-xs font-bold text-chiefs-orange uppercase bg-chiefs-orange/10 px-3 py-1 rounded-full">Tackle Football</span>
+                    <h3 class="text-2xl font-black text-white mt-4 mb-2">8U Division</h3>
+                    <p class="text-xs text-zinc-400 mb-4">Ages 7 - 8</p>
+                    <p class="text-sm text-zinc-300 mb-6">Introductory tackle football emphasizing safe tackling technique and teamwork.</p>
+                    <button onclick="openModal('register', '8U Tackle')" class="w-full py-2.5 bg-zinc-800 hover:bg-chiefs-orange text-white rounded-xl text-xs font-bold uppercase transition-colors">Register 8U</button>
+                </div>
+
+                <!-- Division 3 -->
+                <div class="bg-chiefs-dark p-6 rounded-2xl border border-zinc-800 text-center card-hover">
+                    <span class="text-xs font-bold text-chiefs-orange uppercase bg-chiefs-orange/10 px-3 py-1 rounded-full">Tackle Football</span>
+                    <h3 class="text-2xl font-black text-white mt-4 mb-2">10U & 12U</h3>
+                    <p class="text-xs text-zinc-400 mb-4">Ages 9 - 12</p>
+                    <p class="text-sm text-zinc-300 mb-6">Competitive play, strategic playcalling, positioning, and advanced techniques.</p>
+                    <button onclick="openModal('register', '10U/12U Tackle')" class="w-full py-2.5 bg-zinc-800 hover:bg-chiefs-orange text-white rounded-xl text-xs font-bold uppercase transition-colors">Register Competitive</button>
+                </div>
+
+                <!-- Division 4 -->
+                <div class="bg-chiefs-dark p-6 rounded-2xl border border-zinc-800 text-center card-hover">
+                    <span class="text-xs font-bold text-chiefs-orange uppercase bg-chiefs-orange/10 px-3 py-1 rounded-full">Cheer & Dance</span>
+                    <h3 class="text-2xl font-black text-white mt-4 mb-2">HTX Cheer</h3>
+                    <p class="text-xs text-zinc-400 mb-4">Ages 5 - 13</p>
+                    <p class="text-sm text-zinc-300 mb-6">Spirit, routines, sideline cheering, halftime performances, and competitions.</p>
+                    <button onclick="openModal('register', 'Cheerleading')" class="w-full py-2.5 bg-zinc-800 hover:bg-chiefs-orange text-white rounded-xl text-xs font-bold uppercase transition-colors">Register Cheer</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="py-20 bg-chiefs-dark border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-chiefs-orange uppercase tracking-widest mb-2">Season Timeline</h2>
+                <p class="text-3xl sm:text-4xl font-black text-white uppercase">KEY DATES & SCHEDULE</p>
+                <div class="w-20 h-1 bg-chiefs-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-zinc-900 p-5 rounded-2xl border border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-chiefs-orange/20 text-chiefs-orange rounded-xl flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-clipboard-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">Official Team Tryouts</h4>
+                            <p class="text-xs text-zinc-400">Inwood Field • All Divisions</p>
+                        </div>
+                    </div>
+                    <span class="bg-chiefs-orange text-white font-bold px-4 py-1.5 rounded-lg text-xs tracking-wide">June 12, 2027</span>
+                </div>
+
+                <div class="bg-zinc-900 p-5 rounded-2xl border border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-zinc-800 text-zinc-400 rounded-xl flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">Summer Conditioning Camp Begins</h4>
+                            <p class="text-xs text-zinc-400">Inwood Field • Tuesday & Thursday</p>
+                        </div>
+                    </div>
+                    <span class="bg-zinc-800 text-zinc-300 font-bold px-4 py-1.5 rounded-lg text-xs tracking-wide">July 6, 2027</span>
+                </div>
+
+                <div class="bg-zinc-900 p-5 rounded-2xl border border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-zinc-800 text-zinc-400 rounded-xl flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">Gear & Uniform Fitting</h4>
+                            <p class="text-xs text-zinc-400">Inwood Field Clubhouse</p>
+                        </div>
+                    </div>
+                    <span class="bg-zinc-800 text-zinc-300 font-bold px-4 py-1.5 rounded-lg text-xs tracking-wide">July 20, 2027</span>
+                </div>
+
+                <div class="bg-zinc-900 p-5 rounded-2xl border border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-zinc-800 text-zinc-400 rounded-xl flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-football"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">Regular Season Opening Day</h4>
+                            <p class="text-xs text-zinc-400">League Opener • Location TBA</p>
+                        </div>
+                    </div>
+                    <span class="bg-zinc-800 text-zinc-300 font-bold px-4 py-1.5 rounded-lg text-xs tracking-wide">August 28, 2027</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-chiefs-black border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-chiefs-orange uppercase tracking-widest mb-2">Get In Touch</h2>
+                <p class="text-3xl sm:text-4xl font-black text-white uppercase">CONTACT HTX CHIEFS</p>
+                <div class="w-20 h-1 bg-chiefs-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-10">
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-chiefs-dark p-6 rounded-2xl border border-zinc-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 orange-gradient rounded-xl flex items-center justify-center text-white text-xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Direct Phone</h3>
+                            <p class="text-xs text-zinc-400 mb-2">Call or text us anytime</p>
+                            <a href="tel:7134101665" class="text-chiefs-orange hover:underline font-extrabold text-xl">
+                                713-410-1665
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-chiefs-dark p-6 rounded-2xl border border-zinc-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 orange-gradient rounded-xl flex items-center justify-center text-white text-xl shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Email Address</h3>
+                            <p class="text-xs text-zinc-400 mb-2">Send registration queries</p>
+                            <a href="mailto:HTXChiefs@gmail.com" class="text-zinc-200 hover:text-chiefs-orange font-bold text-base transition-colors">
+                                HTXChiefs@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-chiefs-dark p-6 rounded-2xl border border-zinc-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 orange-gradient rounded-xl flex items-center justify-center text-white text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Practice Location</h3>
+                            <p class="text-xs text-zinc-400 mb-1">Inwood Field</p>
+                            <p class="text-zinc-300 text-sm">Houston, TX 77088</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="lg:col-span-7 bg-chiefs-dark p-8 rounded-2xl border border-zinc-800">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center space-x-2">
+                        <i class="fa-solid fa-paper-plane text-chiefs-orange"></i>
+                        <span>Send Us A Message</span>
+                    </h3>
+
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Parent/Guardian Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-chiefs-orange text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Phone Number</label>
+                                <input type="tel" required placeholder="(713) 000-0000" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-chiefs-orange text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Email Address</label>
+                            <input type="email" required placeholder="parent@example.com" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-chiefs-orange text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Program Interest</label>
+                            <select class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-chiefs-orange text-sm">
+                                <option>Youth Football</option>
+                                <option>Cheerleading</option>
+                                <option>General Inquiry / Coaching</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Message</label>
+                            <textarea rows="4" required placeholder="How can we help you?" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-chiefs-orange text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full orange-gradient text-white py-4 rounded-xl font-bold uppercase tracking-wider text-sm shadow-md hover:brightness-110 transition-all">
+                            Submit Message
+                        </button>
+                    </form>
+
+                    <div id="formSuccessMessage" class="hidden mt-4 p-4 bg-emerald-900/50 border border-emerald-500 rounded-xl text-center text-emerald-200 text-sm">
+                        <i class="fa-solid fa-circle-check text-xl mb-1 block"></i>
+                        Thank you! Your message has been sent. We will call/email you shortly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 text-zinc-400 py-12 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 orange-gradient rounded-full flex items-center justify-center font-display font-black text-xl text-white">
+                            C
+                        </div>
+                        <span class="font-display font-black text-lg text-white">HTX <span class="text-chiefs-orange">CHIEFS</span></span>
+                    </div>
+                    <p class="text-sm text-zinc-400 mb-4 max-w-md">
+                        Developing young leaders, athletes, and team players in Houston through high-quality football and cheer programs.
+                    </p>
+                    <div class="flex space-x-4 text-lg">
+                        <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-chiefs-orange hover:text-white rounded-full flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-chiefs-orange hover:text-white rounded-full flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="tel:7134101665" class="w-10 h-10 bg-zinc-800 hover:bg-chiefs-orange hover:text-white rounded-full flex items-center justify-center transition-colors" title="Call 713-410-1665"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-chiefs-orange transition-colors">About Us</a></li>
+                        <li><a href="#divisions" class="hover:text-chiefs-orange transition-colors">Divisions</a></li>
+                        <li><a href="#tryouts" class="hover:text-chiefs-orange transition-colors">2027 Tryouts</a></li>
+                        <li><a href="#schedule" class="hover:text-chiefs-orange transition-colors">Season Schedule</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contact Info</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-chiefs-orange text-xs"></i>
+                            <a href="tel:7134101665" class="hover:text-chiefs-orange text-white font-semibold">713-410-1665</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-chiefs-orange text-xs"></i>
+                            <a href="mailto:HTXChiefs@gmail.com" class="hover:text-chiefs-orange">HTXChiefs@gmail.com</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-location-dot text-chiefs-orange text-xs"></i>
+                            <span>Inwood Field, Houston, TX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center text-xs text-zinc-500">
+                <p>&copy; 2027 HTX Chiefs Youth Football & Cheer. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Designed for HTX Chiefs Athletics</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-chiefs-dark border border-zinc-800 w-full max-w-lg rounded-2xl p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white p-2 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h3 id="modalTitle" class="text-2xl font-black text-white uppercase mb-2">Player Registration</h3>
+            <p class="text-xs text-zinc-400 mb-6">Complete the form below to register your athlete with HTX Chiefs.</p>
+
+            <form onsubmit="handleRegistrationSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Athlete's Full Name</label>
+                    <input type="text" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-chiefs-orange">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Age Group</label>
+                        <select id="modalDivisionSelect" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-chiefs-orange">
+                            <option>6U Flag</option>
+                            <option>8U Tackle</option>
+                            <option>10U/12U Tackle</option>
+                            <option>Cheerleading</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Date of Birth</label>
+                        <input type="date" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-chiefs-orange">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Parent / Guardian Name</label>
+                    <input type="text" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-chiefs-orange">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-zinc-400 mb-1 uppercase">Contact Phone</label>
+                    <input type="tel" required placeholder="713-XXX-XXXX" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-chiefs-orange">
+                </div>
+
+                <button type="submit" class="w-full orange-gradient text-white py-3.5 rounded-xl font-bold uppercase tracking-wider text-sm shadow-md hover:brightness-110 transition-all mt-4">
+                    Submit Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal Logic
+        function openModal(type, division = '') {
+            const modal = document.getElementById('modalOverlay');
+            const modalTitle = document.getElementById('modalTitle');
+            const select = document.getElementById('modalDivisionSelect');
+
+            if(type === 'tryouts') {
+                modalTitle.textContent = '2027 Tryouts Pre-Registration';
+            } else {
+                modalTitle.textContent = 'Player Registration';
+            }
+
+            if(division && select) {
+                for(let option of select.options) {
+                    if(option.value.includes(division)) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contactForm').reset();
+            document.getElementById('formSuccessMessage').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('formSuccessMessage').classList.add('hidden');
+            }, 5000);
+        }
+
+        function handleRegistrationSubmit(e) {
+            e.preventDefault();
+            alert("Registration submission received! An HTX Chiefs team member will reach out to you shorty.");
+            closeModal();
+        }
+    </script>
+</body>
+</html>
